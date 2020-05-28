@@ -26,8 +26,6 @@
         USERS
     </div>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
 
     <!-- Nav Item - Users -->
     <li class="nav-item">
@@ -46,6 +44,97 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
+    <div class="sidebar-heading">
+        BrANDS
+    </div>
+
+
+    <!-- Nav Item - Users -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('brands.index')}}">
+            <i class="fas fa-users"></i>
+            <span>All brands</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('brands.create')}}">
+            <i class="fas fa-plus-circle"></i>
+            <span>Add Brands</span></a>
+    </li>
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+    <div class="sidebar-heading">
+        USERS
+    </div>
+
+
+    <!-- Nav Item - Users -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('categories.index')}}">
+            <i class="fas fa-users"></i>
+            <span>All categories</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('categories.create')}}">
+            <i class="fas fa-plus-circle"></i>
+            <span>Add categories</span></a>
+    </li>
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <div class="sidebar-heading">
+        USERS
+    </div>
+
+
+    <!-- Nav Item - Users -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('posts.index')}}">
+            <i class="fas fa-users"></i>
+            <span>All posts</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('posts.create')}}">
+            <i class="fas fa-plus-circle"></i>
+            <span>Add posts</span></a>
+    </li>
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+    <div class="sidebar-heading">
+        USERS
+    </div>
+
+
+    <!-- Nav Item - Users -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('products.index')}}">
+            <i class="fas fa-users"></i>
+            <span>All products</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('products.create')}}">
+            <i class="fas fa-plus-circle"></i>
+            <span>Add products</span></a>
+    </li>
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
