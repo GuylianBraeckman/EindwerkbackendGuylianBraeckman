@@ -14,6 +14,7 @@
     <div class="form-group">
         {!! Form::label('role_id', 'Role:') !!}
         {!! Form::select('role_id', [''=>'Choose options'] + $roles,null, ['class'=>'form-control']) !!}
+
     </div>
     <div class="form-group">
         {!! Form::label('is_active', 'Status:') !!}

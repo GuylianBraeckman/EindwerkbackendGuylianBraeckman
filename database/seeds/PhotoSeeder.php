@@ -13,11 +13,11 @@ class PhotoSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('photos')->insert(['file' => '1587710631adidas_gazelle.jpg']);
-        DB::table('photos')->insert(['file' => '1587710638adidas_superstar.jpg']);
-        DB::table('photos')->insert(['file' => '1587710651nike_performance.jpg']);
-        DB::table('photos')->insert(['file' => '1587711803adidas_originals.jpg']);
-        DB::table('photos')->insert(['file' => '1587797477lacoste_hemd.jpg']);
+        DB::table('photos')->insert(['file'=>'1587710631adidas_gazelle.jpg']);
+        DB::table('photos')->insert(['file'=>'1587710638adidas_superstar.jpg']);
+        DB::table('photos')->insert(['file'=>'1587710651nike_performance.jpg']);
+        DB::table('photos')->insert(['file'=>'1587711803adidas_originals.jpg']);
+        DB::table('photos')->insert(['file'=>'1587797477lacoste_hemd.jpg']);
 
     }
 }

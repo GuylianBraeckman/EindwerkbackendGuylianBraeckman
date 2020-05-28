@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -29,6 +30,9 @@ class AdminProductsController extends Controller
     public function create()
     {
         //
+        $categories = Category::select('name','id')->get();
+        $brands = Brand::select('name','id')->get();
+        return view ('admin.products.create', compact('brands','categories'));
     }
 
     /**
