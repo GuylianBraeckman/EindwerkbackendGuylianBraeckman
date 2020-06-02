@@ -45,7 +45,7 @@
                                      alt=""></td>
                             <td>{{$product->category ? $product->category->name: 'GEEN CATEGORY'}}</td>
                             <td>{{$product->brand ? $product->brand->name: 'GEEN BRAND'}}</td>
-                            <td></td>
+                            <td> <a href="{{route('products.edit', $product->id)}}"> {{$product->name}}</a></td>
                             <td>{{$product->description}}</td>
                             <td>{{$product->price}}</td>
                             <td>{{$product->created_at}}</td>

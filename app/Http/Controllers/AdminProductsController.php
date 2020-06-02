@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Category;
+use App\Photo;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -44,6 +45,15 @@ class AdminProductsController extends Controller
     public function store(Request $request)
     {
         //
+        $input = $request->all();
+        if ($file = $request->file('photo_id')){
+            $name = Time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $photo = Photo::create(['file'=>$name]);
+            $input['photo_id'] = $photo->id;
+        }
+        Product::create($input);
+        return redirect ('/admin/products');
     }
 
     /**
@@ -66,7 +76,12 @@ class AdminProductsController extends Controller
     public function edit($id)
     {
         //
+        $product = Product::query()->findOrFail($id);
+        $categories = Category::select('name','id')->get();
+        $brands = Brand::select('name','id')->get();
+        return view ('admin.users.edit', compact('product', 'categories','brands'));
     }
+
 
     /**
      * Update the specified resource in storage.
