@@ -1,65 +1,103 @@
+
 @extends('layouts.admin')
 @section('title')
-    Edit Products
+    Edit Product
 @endsection
 @section('content')
-    <h1 class="text-primary">All Products</h1>
+    <h1 class="text-primary"><i class="fas fa-edit"></i>Edit Product</h1>
     <hr>
-    <form method="POST" action="{{action('AdminProductsController@update', $product->id)}}" enctype="multipart/form-data">
+    <form method="POST" action="{{action('AdminProductsController@update', $product->id)}}"
+          enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <div class="row">
-            <div class="col-lg-8">
-                <div class="form-group">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="fab-fa-product-hunt"></i></div>
-                            <input type="text" class="form-control" name="name" placeholder="Name" value="{{$product->name}}">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <img class="img-thumbnail mb-3" src="{{$product->photo ? asset($product->photo->file) : 'GEEN FOTOMOMENTEEL'}}" alt="">
+                            <input type="file" class="form-control-file" id="photo_id" name="photo_id">
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text"><i class="fas fa-tags"></i></label>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fab fa-product-hunt"></i></div>
+                                </div>
+                                <input type="text" class="form-control" name="name" placeholder="Name"
+                                       value="{{$product->name}}">
+                            </div>
                         </div>
-                        <select class="custom-select" name="category_id">
-                            <option value="" disabled selected>Select a category</option>
-                            @foreach($categories as $category)
-                                @if($product->category_id == $category->id)
-                                    <option selected value="{{$category->id}}">{{$category->name}}</option>
-                                @else
-                                    <option value=" {{$category->id}}"> {{$category->name}}</option>
-                                @endif
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text"><i class="fas fa-tags"></i></label>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text"><i class="fas fa-tags"></i></label>
+                                </div>
+                                <select class="custom-select" name="category_id">
+                                    <option value="" disabled>Select a category</option>
+                                    @foreach($categories as $category)
+                                        @if($product->category_id == $category->id)
+                                            <option selected value=" {{$category->id}}"> {{$category->name}}</option>
+                                        @else
+                                            <option value=" {{$category->id}}"> {{$category->name}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                        <select class="custom-select" name="category_id">
-                            <option value="" disabled selected>Select a category</option>
-                            @foreach($categories as $category)
-                                @if($product->category_id == $category->id)
-                                    <option selected value="{{$category->id}}">{{$category->name}}</option>
-                                @else
-                                    <option value=" {{$category->id}}"> {{$category->name}}</option>
-                                @endif
-                            @endforeach
-                        </select>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text"><i class="fas fa-copyright"></i></label>
+                                </div>
+                                <select class="custom-select" name="brand_id">
+
+                                    <option value="" disabled>Select a brand</option>
+                                    @foreach($brands as $brand)
+                                        @if($product->brand_id == $brand->id)
+                                            <option selected value=" {{$brand->id}}"> {{$brand->name}}</option>
+                                        @else
+                                            <option value=" {{$brand->id}}"> {{$brand->name}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text"><i class="fas fa-euro-sign"></i></label>
+                                </div>
+                                <input type="number" name="price" step="0.05" value="{{$product->price}}">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="form-group">
-                    <img class="img-thumbnail mb-3" src="{{$product->photo ? asset($product->photo->file) : 'http://place-hold
-                    .it/400x400'}}" alt="">
-                    <input type="file" class="form-control-file" id="photo_id" name="photo_id">
+                    <div class="card">
+                        <div class="card-header">
+                            Description
+                        </div>
+                        <div class="card-body">
+                                  <textarea class="form-control rounded-0" name="description"
+                                            rows="10">{{$product->description}}</textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit"><i class="fas fa-save"></i> Update
+                        Product
+                    </button>
+                </div>
+            </div>
+            -
         </div>
     </form>
 @endsection
+

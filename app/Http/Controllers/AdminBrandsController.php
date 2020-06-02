@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminBrandsController extends Controller
 {
@@ -14,6 +16,8 @@ class AdminBrandsController extends Controller
     public function index()
     {
         //
+        $brands = Brand::paginate(30);
+        return view('admin.brands.index',compact('brands'));
     }
 
     /**
@@ -24,6 +28,7 @@ class AdminBrandsController extends Controller
     public function create()
     {
         //
+        return view('admin.brands.create');
     }
 
     /**
@@ -35,7 +40,12 @@ class AdminBrandsController extends Controller
     public function store(Request $request)
     {
         //
-    }
+        Brand::create($request->all());
+        Session::flash('created_brand', 'The brand is created');
+        return redirect('admin/brands');
+
+
+}
 
     /**
      * Display the specified resource.
