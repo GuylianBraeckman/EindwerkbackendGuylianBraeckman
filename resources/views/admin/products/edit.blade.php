@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <img class="img-thumbnail mb-3" src="{{$product->photo ? asset($product->photo->file) : 'GEEN FOTOMOMENTEEL'}}" alt="">
+                            <img class="img-thumbnail mb-3" src="{{$product->photo ? asset($product->photo->file) : 'http://placehold.it/62x62'}}" alt="">
                             <input type="file" class="form-control-file" id="photo_id" name="photo_id">
                         </div>
                     </div>
@@ -96,7 +96,17 @@
                     </button>
                 </div>
             </div>
-            -
+
+        </div>
+    </form>
+    <form method="POST" action="{{action('AdminProductsController@destroy', $product->id)}}"
+          enctype="multipart/form-data">
+        @csrf
+        @method('DELETE')
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit"><i class="fas fa-save"></i> delete
+                Product
+            </button>
         </div>
     </form>
 @endsection

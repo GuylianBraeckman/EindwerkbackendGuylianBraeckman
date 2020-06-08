@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminCategoriesController extends Controller
 {
@@ -14,6 +16,8 @@ class AdminCategoriesController extends Controller
     public function index()
     {
         //
+        $categories = Category::paginate(30);
+        return view('admin.categories.index',compact('categories'));
     }
 
     /**
@@ -24,6 +28,7 @@ class AdminCategoriesController extends Controller
     public function create()
     {
         //
+        return view('admin.categories.create');
     }
 
     /**
@@ -35,6 +40,9 @@ class AdminCategoriesController extends Controller
     public function store(Request $request)
     {
         //
+        Category::create($request->all());
+        Session::flash('created_category', 'The category is created');
+        return redirect('admin/categories');
     }
 
     /**
@@ -57,6 +65,9 @@ class AdminCategoriesController extends Controller
     public function edit($id)
     {
         //
+        $categories = Category::query()->findOrFail($id);
+
+        return view('admin.categories.edit', compact('categories'));
     }
 
     /**
@@ -69,6 +80,9 @@ class AdminCategoriesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $categories = Category::query()->findOrFail($id);
+        $categories->update($request->all());
+        return redirect('/admin/categories');
     }
 
     /**
@@ -79,6 +93,9 @@ class AdminCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = Category::findOrFail($id);
+        $categories->delete();
+
+        return redirect('admin/categories');
     }
 }

@@ -14,6 +14,8 @@ class Product extends Model
         'name',
         'description',
         'price',
+        'color_id',//foreign key van de tabel die verwijst naar het kleur
+        'size'
 
     ];
 
@@ -27,6 +29,9 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
     public function user(){
+        return $this->belongsTo(User::class);
+    }
+    public function color(){
         return $this->belongsTo(User::class);
     }
 }

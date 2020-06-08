@@ -67,7 +67,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     <div class="sidebar-heading">
-        USERS
+        CATEGORIES
     </div>
 
 
@@ -85,12 +85,31 @@
             <span>Add categories</span></a>
     </li>
 
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+    <div class="sidebar-heading">
+        COLORS
+    </div>
 
+
+    <!-- Nav Item - Users -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('colors.index')}}">
+            <i class="fas fa-users"></i>
+            <span>All Colors</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('colors.create')}}">
+            <i class="fas fa-plus-circle"></i>
+            <span>Add Colors</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
     <div class="sidebar-heading">
-        USERS
+        POSTS
     </div>
 
 
@@ -112,7 +131,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     <div class="sidebar-heading">
-        USERS
+        PRODUCTS
     </div>
 
 
@@ -135,10 +154,11 @@
     <hr class="sidebar-divider d-none d-md-block">
 
 
-
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
+
+
 
 </ul>

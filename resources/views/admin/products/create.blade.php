@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <h1 class="text-primary">All Products</h1>
+    @include('includes.form_error')
     <hr>
     <form method="POST" action="{{action('AdminProductsController@store')}}" enctype="multipart/form-data">
         @csrf
@@ -54,7 +55,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text"><i class="fas fa-euro-sign"></i></label>
                         </div>
-                        <input type="number" name="price" step="0.05">
+                        <input type="number" name="price" step="0.05" value="0.00" >
                     </div>
                 </div>
             </div>

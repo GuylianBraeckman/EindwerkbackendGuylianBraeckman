@@ -38,6 +38,7 @@ Route::resource('admin/products','AdminProductsController',['index'=>'admin.prod
 Route::get('admin/products/brand/{id}','AdminProductsController@productsPerBrand')->name('admin.productsPerBrand');
 Route::resource('admin/photos','AdminPhotosController');
 Route::resource('admin/posts','AdminPostsController');
+Route::resource('admin/colors','AdminColorsController');
 
 
 

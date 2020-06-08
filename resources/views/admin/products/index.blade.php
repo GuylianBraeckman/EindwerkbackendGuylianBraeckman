@@ -30,6 +30,7 @@
                     <th scope="row"><i class="fas fa-copyright"></i> Brand</th>
                     <th scope="row"><i class="fab fa-product-hunt"></i> Product</th>
                     <th scope="row">Description</th>
+                    <th scope="row">colors</th>
                     <th scope="row">Price</th>
                     <th scope="row">Created At</th>
                     <th scope="row">Updated At</th>
@@ -39,16 +40,15 @@
                 @if($products)
                     @foreach($products as $product)
                         <tr>
-
-
                             <td>{{$product->id}}</td>
-                            <td><img height="60" src="{{$product->photo ? asset($product->photo->file) : 'GEEN FOTOMOMENTEEL'}}" alt=""></td>
+                            <td><img height="60" src="{{$product->photo ? asset( $product->photo->file) : 'http://placehold.it/62x62'}}" alt=""></td>
                             <td>{{$product->category ? $product->category->name : 'GEEN CATEGORY'}}</td>
                             <td>{{$product->brand ? $product->brand->name : 'GEEN BRAND'}}</td>
                             <td>
                                 <a href="{{route('products.edit', $product->id)}}"> {{$product->name}}</a>
                             </td>
                             <td>{{$product->description}}</td>
+                            <td>{{$product->colors}}</td>
                             <td>{{$product->price}}</td>
                             <td>{{$product->created_at}}</td>
                             <td>{{$product->updated_at}}</td>
@@ -58,4 +58,5 @@
                 </tbody>
             </table>
         </div>
+    </div>
 @endsection

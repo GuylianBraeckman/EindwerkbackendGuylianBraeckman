@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Category;
+use App\Http\Requests\ProductsRequest;
 use App\Photo;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 
 class AdminProductsController extends Controller
 {
@@ -19,8 +22,8 @@ class AdminProductsController extends Controller
     {
         //
         $brands = Brand::all();
-        $products = Product::with(['category','brand','photo'])->get();
-        return view('admin.products.index',compact('products','brands'));
+        $products = Product::with(['category','brand','photo','color'])->get();
+        return view('admin.products.index',compact('products','brands','colors'));
     }
 
     /**
@@ -42,7 +45,7 @@ class AdminProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductsRequest $request)
     {
         //
         $input = $request->all();
@@ -79,7 +82,7 @@ class AdminProductsController extends Controller
         $product = Product::query()->findOrFail($id);
         $categories = Category::select('name','id')->get();
         $brands = Brand::select('name','id')->get();
-        return view ('admin.users.edit', compact('product', 'categories','brands'));
+        return view ('admin.products.edit', compact('product', 'categories','brands'));
     }
 
 
@@ -93,6 +96,22 @@ class AdminProductsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $product = Product::query()->findOrFail($id);
+        if($product->photo !== null){
+            File::delete($product->photo->file);
+        }
+
+
+        if ($file = $request->file('photo_id')) {
+            $name = Time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $photo = Photo::create(['file' => $name]);
+            $input['photo_id'] = $photo->id;
+        }
+            $product->update($request->all());
+            return redirect('/admin/products');
+
+
     }
 
     /**
@@ -104,6 +123,15 @@ class AdminProductsController extends Controller
     public function destroy($id)
     {
         //
+        $product = Product::findOrFail($id);
+        if($product->photo !== null){
+            unlink(public_path() . $product->photo->file);
+            $product->photo->delete();
+        }
+        $product->delete();
+
+        return redirect('admin/products');
+
     }
 
     public function productsPerBrand($id){

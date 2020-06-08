@@ -1,27 +1,26 @@
 @extends('layouts.admin')
 @section('content')
-
     <div class="row">
         <div class="col-12">
-            <h1>Edit Brands</h1>
+            <h1>Edit Colors</h1>
         </div>
         <div class="col-12">
-
             @include('includes.form_error')
-            {!! Form::open(['method'=>'POST', 'action'=>'AdminBrandsController@store', 'files'=>false]) !!}
+            {!! Form::model($colors,['method'=>'PATCH', 'action'=>['AdminColorsController@update',
+            $colors->id]]) !!}
             <div class="form-group">
                 {!! Form::label('name', 'Name:') !!}
                 {!! Form::text('name', null, ['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('description', 'Description:') !!}
-                {!! Form::text('description', null, ['class'=>'form-control']) !!}
-            </div>
-            <div class="form-group">
-                {!! Form::submit('create Brand', ['class'=>'btn btn-success rounded-0'])
+                {!! Form::submit('Update Colors', ['class'=>'btn btn-success rounded-0'])
                  !!}
             </div>
             {!! Form::close() !!}
+            {!! Form::open(['method'=>'DELETE', 'action'=>['AdminColorsController@destroy', $colors->id] ]) !!}
+            <div class="form-group">
+                {!! Form::submit('Delete Colors', ['class' => 'btn btn-danger rounded-0']) !!}
+            </div>
             {!! Form::close() !!}
 
 

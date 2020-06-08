@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Brand;
+use App\Color;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
-class AdminBrandsController extends Controller
+class AdminColorsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class AdminBrandsController extends Controller
     public function index()
     {
         //
-        $brands = Brand::paginate(30);
-        return view('admin.brands.index',compact('brands'));
+        $colors = Color::paginate(10);
+        return view('admin.colors.index',compact('colors'));
     }
 
     /**
@@ -28,7 +27,7 @@ class AdminBrandsController extends Controller
     public function create()
     {
         //
-        return view('admin.brands.create');
+        return view('admin.colors.create');
     }
 
     /**
@@ -40,12 +39,9 @@ class AdminBrandsController extends Controller
     public function store(Request $request)
     {
         //
-        Brand::create($request->all());
-        Session::flash('created_brand', 'The brand is created');
-        return redirect('admin/brands');
-
-
-}
+        Color::create($request->all());
+        return redirect('admin/colors');
+    }
 
     /**
      * Display the specified resource.
@@ -67,10 +63,9 @@ class AdminBrandsController extends Controller
     public function edit($id)
     {
         //
-        $brand = Brand::query()->findOrFail($id);
+        $colors = Color::query()->findOrFail($id);
 
-        return view('admin.brands.edit', compact('brand'));
-
+        return view('admin.colors.edit', compact('colors'));
     }
 
     /**
@@ -80,13 +75,12 @@ class AdminBrandsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Brand $brand)
+    public function update(Request $request, $id)
     {
         //
-        $brand->update($request->all());
-        Session::flash('updated_brand', 'The Brand has been updated');
-        return redirect('admin/brands');
-
+        $colors = Color::query()->findOrFail($id);
+        $colors->update($request->all());
+        return redirect('/admin/colors');
     }
 
     /**
@@ -95,10 +89,12 @@ class AdminBrandsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brand $brand)
+    public function destroy($id)
     {
-    $brand->delete();
-    return redirect('admin/brands');
-    }
+        //
+        $colors = Color::findOrFail($id);
+        $colors->delete();
 
+        return redirect('admin/colors');
+    }
 }
