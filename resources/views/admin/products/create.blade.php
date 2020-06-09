@@ -3,7 +3,7 @@
     Add Products
 @endsection
 @section('content')
-    <h1 class="text-primary">All Products</h1>
+    <h1 class="text-primary">Add Products</h1>
     @include('includes.form_error')
     <hr>
     <form method="POST" action="{{action('AdminProductsController@store')}}" enctype="multipart/form-data">
@@ -29,6 +29,20 @@
 
                             @foreach($categories as $category)
                                 <option value=" {{$category->id}}"> {{$category->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text"><i class="fas fa-tags"></i></label>
+                        </div>
+                        <select class="custom-select" name="color_id">
+                            <option value="" disabled selected>Select a color</option>
+
+                            @foreach($colors as $color)
+                                <option value=" {{$color->id}}"> {{$color->name}}</option>
                             @endforeach
                         </select>
                     </div>

@@ -84,7 +84,26 @@
             <i class="fas fa-plus-circle"></i>
             <span>Add categories</span></a>
     </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+    <div class="sidebar-heading">
+        BLOGS
+    </div>
 
+
+    <!-- Nav Item - Users -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('blogs.index')}}">
+            <i class="fas fa-users"></i>
+            <span>All Blogs</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('blogs.create')}}">
+            <i class="fas fa-plus-circle"></i>
+            <span>Add Blogs</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     <div class="sidebar-heading">

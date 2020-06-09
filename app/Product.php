@@ -10,12 +10,12 @@ class Product extends Model
     protected $fillable = [
         'category_id', //foreign key van de tabel die verwijst naar categories
         'brand_id', //foreign key van de tabel die verwijst naar brands
+        'color_id',//foreign key van de tabel die verwijst naar het kleur
         'photo_id',//foreign key van de tabel die verwijst naar photos
         'name',
         'description',
         'price',
-        'color_id',//foreign key van de tabel die verwijst naar het kleur
-        'size'
+
 
     ];
 
@@ -24,6 +24,9 @@ class Product extends Model
     }
     public function brand(){
         return $this->belongsTo(Brand::class);
+}
+    public function color(){
+        return $this->belongsTo(Color::class);
     }
     public function category(){
         return $this->belongsTo(Category::class);
@@ -31,7 +34,5 @@ class Product extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-    public function color(){
-        return $this->belongsTo(User::class);
-    }
+
 }

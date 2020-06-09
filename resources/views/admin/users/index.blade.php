@@ -1,6 +1,5 @@
 @extends ('layouts.admin')
 @section('content')
-@section('content')
     @if(Session::has('deleted_user'))
         <p class="alert alert-success">{{session('deleted_user')}}</p>
     @endif

@@ -48,7 +48,7 @@
                                 <a href="{{route('products.edit', $product->id)}}"> {{$product->name}}</a>
                             </td>
                             <td>{{$product->description}}</td>
-                            <td>{{$product->colors}}</td>
+                            <td>{{$product->color ? $product->color->name : 'GEEN KLEUR'}}</td>
                             <td>{{$product->price}}</td>
                             <td>{{$product->created_at}}</td>
                             <td>{{$product->updated_at}}</td>

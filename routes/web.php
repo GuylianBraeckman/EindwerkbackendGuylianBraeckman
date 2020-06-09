@@ -39,6 +39,8 @@ Route::get('admin/products/brand/{id}','AdminProductsController@productsPerBrand
 Route::resource('admin/photos','AdminPhotosController');
 Route::resource('admin/posts','AdminPostsController');
 Route::resource('admin/colors','AdminColorsController');
+Route::resource('admin/blogs','AdminBlogsController');
+
 
 
 

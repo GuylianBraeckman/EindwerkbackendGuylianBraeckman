@@ -28,6 +28,7 @@ class ProductsRequest extends FormRequest
             'name'=>'required|string',
             'category_id'=>'required',
             'brand_id'=>'required',
+            'description'=>'required',
         ];
     }
     public function messages()
@@ -36,6 +37,8 @@ class ProductsRequest extends FormRequest
             'name.required' => 'Name is required!',
             'category_id.required' => 'Category is required!',
             'brand_id.required' => 'Brand is required!',
+            'description.required' => 'Description is required!',
+
         ];
     }
 }

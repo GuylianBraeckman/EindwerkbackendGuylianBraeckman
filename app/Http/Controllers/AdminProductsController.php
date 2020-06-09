@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Category;
+use App\Color;
 use App\Http\Requests\ProductsRequest;
 use App\Photo;
 use App\Product;
@@ -36,7 +37,9 @@ class AdminProductsController extends Controller
         //
         $categories = Category::select('name','id')->get();
         $brands = Brand::select('name','id')->get();
-        return view ('admin.products.create', compact('brands','categories'));
+        $colors = Color::select('name','id')->get();
+
+        return view ('admin.products.create', compact('brands','categories','colors'));
     }
 
     /**
@@ -81,8 +84,9 @@ class AdminProductsController extends Controller
         //
         $product = Product::query()->findOrFail($id);
         $categories = Category::select('name','id')->get();
+        $colors = Color::select('name','id')->get();
         $brands = Brand::select('name','id')->get();
-        return view ('admin.products.edit', compact('product', 'categories','brands'));
+        return view ('admin.products.edit', compact('product', 'categories','brands','colors'));
     }
 
 
