@@ -1,0 +1,669 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+@font-face {
+  font-family: MoBold;
+  src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: MoReg;
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: MoLight;
+  src: url('../fonts/Montserrat-Light.ttf');
+}
+
+@font-face {
+  font-family: MoBold;
+  src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: MoExtraBold;
+  src: url('../fonts/Montserrat-ExtraBold.ttf');
+}
+
+
+.bgcart {
+  background: #f4f4f4;
+}
+
+.montserratlight {
+  font-family: Molight;
+}
+
+.navbar-brand {
+  font-family: MoExtraBold;
+  color: #ff4f37 !important;
+  font-size: 48px;
+}
+
+.imgcategory{
+  display: block;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+
+.sidebartitle {
+  font-family: Mobold;
+  font-size: 2rem;
+}
+
+.card-title{
+  font-family: Molight;
+  font-size: 2.5rem;
+}
+
+.card-text{
+  font-family: Mobold;
+  font-size: 3rem;
+}
+
+.sidebartekst {
+  font-family: Molight;
+  font-size: 1.5rem;
+}
+
+.navbar {
+  font-family: MoBold;
+  font-size: 20px;
+}
+
+.dropdown-toggle:after {
+  color: #ff4f37 !important;
+}
+
+.searchbar {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 40px;
+  background-color: white;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+
+.search_input {
+  color: black;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 70px;
+  caret-color: transparent;
+  line-height: 25px;
+  transition: width 0.4s linear;
+}
+
+.search_icon {
+  color: #ff4f37;
+}
+
+.shopgebruiker {
+  color: #ff4f37;
+}
+
+.dropdown-item:hover {
+  background: lightgray;
+  color: black;
+}
+
+.dropdown-menu a {
+  color: #ff4f37;
+}
+
+.navbar-toggler-icon {
+  width: 2.25em;
+  height: 2.25em;
+}
+
+#achtergrond {
+  position: absolute;
+  bottom: 0;
+  top: 16px;
+  width: 100%;
+}
+
+header {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+h5 {
+  font-size: 36px;
+  font-family: MoBold;
+}
+
+.tekstheader {
+  margin-bottom: 130px;
+  margin-top: 82px;
+}
+
+.witteknopkes {
+  color: black;
+  font-family: MoBold;
+  font-size: 10px;
+}
+
+.oranjetekst {
+  color: #ff4f37;
+  font-family: MoBold;
+  font-size: 1rem;
+}
+
+.oranjetekst2{
+  color: #ff4f37;
+  font-family: MoBold;
+  font-size: 1.75rem;
+}
+
+.btn-circle.btn-md {
+  width: 50px;
+  height: 50px;
+  padding: 7px 10px;
+  border-radius: 25px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.btn.btn-md {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 7px 10px;
+  text-align: center;
+  border-color: black;
+  font-size: 1.75rem;
+}
+.oranjestuk {
+  background: #ff4f37;
+  color: white;
+  font-family: MoBold;
+  font-size: 10px;
+}
+
+.borders {
+  border: 1px solid black;
+}
+
+.borders.grow {
+  transition: all .2s ease-in-out;
+}
+
+.borders:hover {
+  transform: scale(1.3);
+  z-index: 1;
+}
+
+.helmtype {
+  font-size: 24px;
+}
+
+.prijs {
+  font-size: 1.75rem;
+  font-family: mobold;
+}
+
+.buy-now {
+  padding: 20px 35px;
+  background: #ff4f37;
+  color: white;
+  font-family: mobold;
+  border: none;
+  inline-size: fit-content;
+}
+
+.buy-now:hover {
+  background: red;
+}
+
+.imgfoto.grow {
+  transition: all .2s ease-in-out;
+}
+
+.imgfoto:hover {
+  transform: scale(1.3);
+  z-index: -1;
+}
+
+h2 {
+  color: white;
+  font-size: 32px;
+  font-family: Mobold;
+}
+
+h3 {
+  font-family: Mobold;
+  font-size: 22px;
+}
+
+h4 {
+  font-family: Mobold;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.underline {
+  color: #ff5b44;
+  font-family: Mobold;
+  font-size: 16px;
+  text-decoration: underline
+}
+
+.underline:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.brandsdiv {
+  text-decoration: underline;
+}
+
+.datums {
+  color: #c7c7c7;
+  font-family: Mobold;
+  font-size: 16px;
+}
+
+.footertekst {
+  font-size: 1rem;
+}
+
+.bannerbg {
+  background-image: url("../img/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bannerbgmobile {
+  background: url("../img/bannerzonderhelm.png") center center;
+  background-repeat: no-repeat;
+}
+
+.textbanner {
+  font-size: 8px;
+}
+
+.formdetails{
+  background: #f4f4f4;
+  font-family: Molight;
+}
+
+.newsletter {
+  padding: 80px 0;
+  background: #f2f2f2;
+}
+
+.newsletter .content {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.newsletter .content h2 {
+  color: #404040;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.newsletter .content .form-control {
+  height: 50px;
+  border-color: #ffffff;
+  border-radius: 0;
+}
+
+.newsletter .content.form-control:focus {
+  box-shadow: none;
+  border: 2px solid #243c4f;
+}
+
+.newsletter .content .btn {
+  min-height: 50px;
+  border-radius: 0;
+  background: #ff4f37;
+  color: white;
+  font-weight: 600;
+}
+
+footer {
+  background: #1a1a1a;
+}
+
+footer p {
+  color: #757575;
+  font-family: moLight;
+}
+
+footer i {
+  color: #757575;
+  padding-bottom: 20px;
+}
+
+footer p.hover {
+  cursor: pointer;
+}
+
+.headerSocial{
+  font-family: Mobold;
+  font-size: 2.5rem;
+}
+
+
+.achtergrond {
+  background: #f9f9f9;
+  padding-bottom: 14px;
+}
+
+.achtergrond2 {
+  background: #f9f9f9;
+  padding-bottom: 14px;
+}
+
+.checkout {
+  background: #ff4f37;
+  border-color: none;
+  color: white;
+  font-family: Mobold;
+  font-size: 14px;
+}
+.quantity {
+  float: left;
+  margin-right: 15px;
+  background-color: #eee;
+  position: relative;
+  width: 80px;
+  overflow: hidden
+}
+
+.quantity input {
+  margin: 0;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  float: right;
+  color: #000;
+  font-size: 20px;
+  border: 0;
+  outline: 0;
+  background-color: #F6F6F6
+}
+
+.quantity input.qty {
+  position: relative;
+  border: 0;
+  width: 100%;
+  height: 40px;
+  padding: 10px 25px 10px 10px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 0;
+  background-clip: padding-box
+}
+
+.quantity .minus, .quantity .plus {
+  line-height: 0;
+  background-clip: padding-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-background-size: 6px 30px;
+  -moz-background-size: 6px 30px;
+  color: #bbb;
+  font-size: 20px;
+  position: absolute;
+  height: 50%;
+  border: 0;
+  right: 0;
+  padding: 0;
+  width: 25px;
+  z-index: 3
+}
+
+.quantity .minus:hover, .quantity .plus:hover {
+  background-color: #dad8da
+}
+
+.quantity .minus {
+  bottom: 0
+}
+
+.checkout:hover {
+  background: red;
+  color: white;
+}
+
+.bordertest {
+  border: 2px solid black;
+}
+
+.s-cart {
+  font-family: MoBold;
+  font-size: 48px;
+}
+
+.productname {
+  font-size: 40px;
+}
+
+.subtotaltekst {
+  font-family: Molight;
+}
+
+.carttotals {
+  border: 1px solid #dddddd;
+  background: white;
+}
+
+.subtotal {
+  background: #f9f9f9;
+  border: 1px solid #dddddd;
+  font-family: Mobold;
+}
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.text-focus-in {
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+  .navbar {
+    font-family: MoBold;
+    font-size: 16px;
+  }
+
+  .search_input {
+    color: black;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 130px;
+    caret-color: transparent;
+    line-height: 25px;
+    transition: width 0.4s linear;
+  }
+  .navbar li a:hover {
+    color: #ff4f37 !important;
+  }
+  #dropdownfoto1 {
+    margin-right: 6px;
+  }
+  #dropdownfoto2 {
+    margin-right: 9px;
+  }
+  #dropdownfoto3 {
+    margin-right: 10px;
+  }
+  h5 {
+    font-size: 48px;
+    font-family: MoBold;
+  }
+
+
+  .achtergrond {
+    background: #f9f9f9;
+  }
+  .achtergrond2 {
+    background: #f9f9f9;
+    padding-bottom: 14px;
+  }
+  .shopping-cart {
+    margin-top: 20px;
+  }
+
+  .sidebartitle {
+    font-family: Mobold;
+    font-size: 1.2rem;
+  }
+
+  .sidebartekst {
+    font-family: Molight;
+    font-size: 1rem;
+  }
+  .card-title{
+    font-family: Molight;
+    font-size: 1rem;
+  }
+
+  .card-text{
+    font-family: Mobold;
+    font-size: 1rem;
+  }
+  .imgcategory{
+    height: 200px;
+    width:150px;
+  }
+  .headerSocial{
+    font-size: 1.25rem;
+  }
+  .oranjetekst {
+    font-size: 0.8rem;
+  }
+  .teixseize{
+    font-size: 1.4rem;
+    font-family: Mobold;
+  }
+
+  .oranjetekst2{
+    font-size: 1.1rem;
+  }
+
+  .btn-circle.btn-md {
+    width: 20px;
+    height: 20px;
+    padding: 7px 10px;
+    border-radius: 25px;
+    font-size: 10px;
+    text-align: center;
+  }
+  .color-en-size{
+    font-family: Mobold;
+    font-size: 0.8rem;
+  }
+  .btn.btn-md {
+    width: 2rem;
+    height: 2rem;
+    padding: 7px 10px;
+    text-align: center;
+    border-color: black;
+    font-size: 1rem;
+  }
+
+  .addtocarttekst{
+    inline-size: fit-content;
+    font-size: 0.9rem;
+  }
+
+  .bgproduct{
+    background-image: url("../img/bgproduct.png");
+    width: 100%;
+  }
+
+  .carousel-inner img {
+    margin: auto;
+  }
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .carttotaltekst {
+    font-size: 1vw;
+  }
+  .tekstheader {
+    margin-bottom: 230px;
+  }
+  h2 {
+    color: white;
+    font-size: 2rem;
+    font-family: Mobold;
+  }
+  .textbanner {
+    font-size: 12px;
+  }
+
+  .lijn {
+    border-bottom: 1px solid #dddddd;
+  }
+  .datums {
+    font-size: 14px;
+  }
+  .achtergrond2 {
+    background: #f9f9f9;
+    padding-bottom: 19px;
+  }
+  .sidebartitle {
+    font-family: Mobold;
+    font-size: 1.5rem;
+  }
+
+  .sidebartekst {
+    font-family: Molight;
+    font-size: 1.125rem;
+  }
+  .imgcategory{
+    height: 250px;
+    width:200px;
+  }
+
+  .headerSocial{
+    font-size: 1.75rem;
+  }
+  .oranjetekst {
+    font-size: 1rem;
+  }
+
+
+}
