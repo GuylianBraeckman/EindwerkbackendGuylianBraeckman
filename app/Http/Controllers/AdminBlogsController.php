@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Http\Requests\BlogsRequest;
 use App\Photo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AdminBlogsController extends Controller
 {
@@ -40,7 +42,7 @@ class AdminBlogsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BlogsRequest $request)
     {
         //
         $input = $request->all();
@@ -74,6 +76,9 @@ class AdminBlogsController extends Controller
     public function edit($id)
     {
         //
+        $blog = Blog::query()->findOrFail($id);
+
+        return view ('admin.blogs.edit', compact('blog'));
     }
 
     /**
@@ -86,6 +91,20 @@ class AdminBlogsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $blog = Blog::query()->findOrFail($id);
+        if($blog->photo !== null){
+            File::delete($blog->photo->file);
+        }
+
+
+        if ($file = $request->file('photo_id')) {
+            $name = Time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $photo = Photo::create(['file' => $name]);
+            $input['photo_id'] = $photo->id;
+        }
+        $blog->update($request->all());
+        return redirect('/admin/blogs');
     }
 
     /**
@@ -97,5 +116,13 @@ class AdminBlogsController extends Controller
     public function destroy($id)
     {
         //
+        $blog = Blog::findOrFail($id);
+        if($blog->photo !== null){
+            unlink(public_path() . $blog->photo->file);
+            $blog->photo->delete();
+        }
+        $blog->delete();
+
+        return redirect('admin/blogs');
     }
 }

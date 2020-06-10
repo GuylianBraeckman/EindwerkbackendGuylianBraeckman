@@ -2,6 +2,7 @@
 @section('content')
     <div class="col-12">
         <h1>Create Blogs</h1>
+        @include('includes.form_error')
     </div>
     <hr>
     <form method="POST" action="{{action('AdminBlogsController@store')}}" enctype="multipart/form-data">

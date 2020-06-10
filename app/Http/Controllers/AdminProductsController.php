@@ -114,8 +114,6 @@ class AdminProductsController extends Controller
         }
             $product->update($request->all());
             return redirect('/admin/products');
-
-
     }
 
     /**
