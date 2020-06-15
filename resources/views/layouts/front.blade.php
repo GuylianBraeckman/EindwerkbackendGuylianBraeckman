@@ -60,9 +60,10 @@
             </div>
             <div class="mt-3 mt-lg-0">
                 <a href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index2.html#"> <i class="fas fa-shopping-cart fa-2x pl-lg-4 shopgebruiker "></i></a>
-                <i class="far fa-user fa-2x pl-3 pr-lg-3 shopgebruiker"></i>
+
+                <a href="{{ route('login') }}"><i class="far fa-user fa-2x pl-3 pr-lg-3 shopgebruiker"></i></a>
             </div>
-        </div>
+
         </div>
     </nav>
 </header>

@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/','FrontendController@index')->name('shop');
+
 //Route::get('/admin', 'HomeController@index')->name('admin');
 
 

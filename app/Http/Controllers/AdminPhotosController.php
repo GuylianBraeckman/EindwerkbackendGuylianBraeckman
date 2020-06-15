@@ -14,6 +14,8 @@ class AdminPhotosController extends Controller
     public function index()
     {
         //
+      
+
     }
 
     /**
