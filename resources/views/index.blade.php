@@ -10,7 +10,7 @@
 
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img alt="..." class="d-block w-100" src="img/bghome.png">
+                            <img alt="..." class="d-block w-100" src="images/bghome.png">
                             <div class="carousel-caption">
                                 <div class="row">
                                     <div class="col-xl-8 offset-lg-2">
@@ -114,6 +114,7 @@
                         <div class="d-none d-xl-block">
                             <div class="col-lg-3 float-left">
                                 <div class="row achtergrond2">
+
                                     <div class="col-10 offset-1">
                                         <p class="pt-5 text-left helmtype montserratlight">ZEUS Z-806 NEW
                                             SUPERTECH II50 MATT</p>
@@ -373,17 +374,20 @@
                                 <h3>BLOG x EVENTS</h3>
                                 <p class="underline ml-auto">SEE ALL</p>
                             </div>
+                            @foreach($blogs as $blog)
                             <div class="row">
                                 <div class="col-4">
-                                    <img class="img-fluid w-100" src="img/blogfoto1.png"/>
+                                    <img class="img-fluid w-100" src={{$blog->photo->file}}/>
+
                                 </div>
                                 <div class="col-8">
                                     <p class="datums">02/08/2017</p>
-                                    <p class="text-dark montserratlight">Dennis wins Van Doren Invitational WSBC Champ</p>
+                                    <p class="text-dark montserratlight">{{$blog->title}}</p>
                                     <p class="underline">READ MORE</p>
                                 </div>
                             </div>
-                            <div class="row mt-3">
+                            @endforeach
+                            {{--<div class="row mt-3">
                                 <div class="col-4">
                                     <img class="img-fluid w-100" src="img/blogfoto2.png"/>
                                 </div>
@@ -392,8 +396,8 @@
                                     <p class="text-dark montserratlight">Dennis wins Van Doren Invitational WSBC Champ</p>
                                     <p class="underline">READ MORE</p>
                                 </div>
-                            </div>
-                            <div class="row mt-3">
+                            </div>--}}
+                            {{--<div class="row mt-3">
                                 <div class="col-4">
                                     <img class="img-fluid w-100" src="img/blogfoto3.png"/>
                                 </div>
@@ -402,7 +406,7 @@
                                     <p class="text-dark montserratlight">Dennis wins Van Doren Invitaional WSBC Champ</p>
                                     <p class="underline">READ MORE</p>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                         <div class="d-none d-xl-block mt-5 mt-lg-0 img-fluid bannerbg col-lg-8">
                             <div class="row">

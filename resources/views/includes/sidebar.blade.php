@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('admin')}}">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('')}}">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-shopping-basket"></i>
         </div>
@@ -172,6 +172,24 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
+    <div class="sidebar-heading">
+        PHOTOS
+    </div>
+
+
+    <!-- Nav Item - Users -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('photos.index')}}">
+            <i class="fas fa-users"></i>
+            <span>All photos</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('photos.create')}}">
+            <i class="fas fa-plus-circle"></i>
+            <span>Add photos</span></a>
+    </li>
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
