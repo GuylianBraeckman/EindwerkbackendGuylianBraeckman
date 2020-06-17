@@ -148,6 +148,6 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="js/bootstrap.min.js">
 </script>--}}
-<script src=""{{asset('js/font-app.js')}}></script>
+<script src="{{asset('js/front-app.js')}}"></script>
 </body>
 </html>

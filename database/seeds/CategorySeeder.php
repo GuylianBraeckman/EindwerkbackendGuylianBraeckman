@@ -13,9 +13,9 @@ class CategorySeeder extends Seeder
     public function run()
     {
         //
-        DB::table('categories')->insert(['name' => 'SCHOENEN','description'=>'Beschrijving SCHOENEN' ]);
-        DB::table('categories')->insert(['name' => 'HEMDEN','description'=>'Beschrijving HEMDEN' ]);
-        DB::table('categories')->insert(['name' => 'SOKKEN','description'=>'Beschrijving SOKKEN' ]);
+        DB::table('categories')->insert(['name' => 'FULL FACE HELMET','description'=>'Beschrijving FULL FACE HELMET' ]);
+        DB::table('categories')->insert(['name' => 'MODULAR HELMET','description'=>'Beschrijving MODULAR HELMET' ]);
+        DB::table('categories')->insert(['name' => 'HALF FACE HELMET','description'=>'Beschrijving HALF FACE HELMET' ]);
 
     }
 }

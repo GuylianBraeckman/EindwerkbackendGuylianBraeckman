@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('brand_id')->unsigned()->index();
             $table->bigInteger('photo_id')->unsigned()->index();
             $table->bigInteger('color_id')->unsigned()->index();
-            $table->string('name');
+            $table->string('name')->default('');
             $table->string('description');
             $table->decimal('price')->default(0);
             $table->timestamps();

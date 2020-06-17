@@ -13,9 +13,9 @@ class BrandSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('brands')->insert(['name' => 'ADIDAS','description'=>'Beschrijving ADIDAS' ]);
-        DB::table('brands')->insert(['name' => 'NIKE','description'=>'Beschrijving NIKE' ]);
-        DB::table('brands')->insert(['name' => 'LACOSTE','description'=>'Beschrijving LACOSTE' ]);
+        DB::table('brands')->insert(['name' => 'ZEUS','description'=>'Beschrijving ZEUS' ]);
+        DB::table('brands')->insert(['name' => 'NOLAN','description'=>'Beschrijving NOLAN' ]);
+        DB::table('brands')->insert(['name' => 'CABERG','description'=>'Beschrijving CABERG' ]);
 
 
     }

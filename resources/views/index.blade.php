@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img alt="..." class="d-block w-100" src="img/bghome.png">
+                            <img alt="..." class="d-block w-100" src="images/bghome.png">
                             <div class="carousel-caption">
                                 <div class="row">
                                     <div class="col-xl-8 offset-lg-2">
