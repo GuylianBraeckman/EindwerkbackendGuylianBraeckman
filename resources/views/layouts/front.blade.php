@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
 
-  {{--  <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,700,800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" media="all" rel="stylesheet">--}}
+    {{--  <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,700,800&display=swap" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" media="all" rel="stylesheet">--}}
 
     <link rel="stylesheet" href="{{asset('css/front-app.css')}}">
     <title>@yield('title')</title>
@@ -38,14 +38,11 @@
                         CATEGORY
                     </a>
                     <div aria-labelledby="navbarDropdown" class="dropdown-menu ">
-                        <a class="dropdown-item" href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index3.html#"><img height="34" id="dropdownfoto1" src="img/helm3.png" width="36"/> FULL FACE
-                            HELMET</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index3.html#"><img height="34" id="dropdownfoto2" src="img/helm2.png" width="36"/>MODULAR
-                            HELMET</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index3.html#"><img height="34" id="dropdownfoto3" src="img/open helm.png" width="36"/>HALF FACE
-                            HELMET</a>
+                        @foreach($categories as $category)
+                            <a class="dropdown-item" href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index3.html#"><img
+                                    height="34" id="dropdownfoto3" src="img/open helm.png" width="36"/>{{$category->name}}</a>
+                            <div class="dropdown-divider"></div>
+                        @endforeach
                     </div>
                 </li>
                 <li class="nav-item pr-lg-4">
@@ -59,7 +56,8 @@
                 <a class="search_icon float-right" href="#"><i class="fas fa-search pt-1"></i></a>
             </div>
             <div class="mt-3 mt-lg-0">
-                <a href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index2.html#"> <i class="fas fa-shopping-cart fa-2x pl-lg-4 shopgebruiker "></i></a>
+                <a href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index2.html#"> <i
+                        class="fas fa-shopping-cart fa-2x pl-lg-4 shopgebruiker "></i></a>
 
                 <a href="{{ route('login') }}"><i class="far fa-user fa-2x pl-3 pr-lg-3 shopgebruiker"></i></a>
             </div>

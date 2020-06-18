@@ -22,6 +22,8 @@ Auth::routes();
 
 Route::get('/','FrontendController@index')->name('shop');
 
+
+
 //Route::get('/admin', 'HomeController@index')->name('admin');
 
 
@@ -42,6 +44,11 @@ Route::resource('admin/photos','AdminPhotosController');
 Route::resource('admin/posts','AdminPostsController');
 Route::resource('admin/colors','AdminColorsController');
 Route::resource('admin/blogs','AdminBlogsController');
+
+
+//FRONT ROUTES
+Route::get('/products','FrontendController@products');
+Route::get('products/brand/{id}','FrontendController@productsPerBrand')->name('productsPerBrand');
 
 
 

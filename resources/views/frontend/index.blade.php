@@ -195,6 +195,7 @@
                     </div>
                     <div class="carousel-item row no-gutters">
                         <div class="d-none d-xl-block">
+
                             <div class="col-lg-3 float-left">
                                 <div class="row achtergrond2">
                                     <div class="col-10 offset-1">
@@ -387,26 +388,6 @@
                                 </div>
                             </div>
                             @endforeach
-                            {{--<div class="row mt-3">
-                                <div class="col-4">
-                                    <img class="img-fluid w-100" src="img/blogfoto2.png"/>
-                                </div>
-                                <div class="col-8">
-                                    <p class="datums">02/08/2017</p>
-                                    <p class="text-dark montserratlight">Dennis wins Van Doren Invitational WSBC Champ</p>
-                                    <p class="underline">READ MORE</p>
-                                </div>
-                            </div>--}}
-                            {{--<div class="row mt-3">
-                                <div class="col-4">
-                                    <img class="img-fluid w-100" src="img/blogfoto3.png"/>
-                                </div>
-                                <div class="col-8">
-                                    <p class="datums">02/08/2017</p>
-                                    <p class="text-dark montserratlight">Dennis wins Van Doren Invitaional WSBC Champ</p>
-                                    <p class="underline">READ MORE</p>
-                                </div>
-                            </div>--}}
                         </div>
                         <div class="d-none d-xl-block mt-5 mt-lg-0 img-fluid bannerbg col-lg-8">
                             <div class="row">
