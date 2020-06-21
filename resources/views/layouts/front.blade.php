@@ -27,7 +27,7 @@
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active pr-lg-4">
-                    <a class="nav-link" href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index.html#">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{'/'}}">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item pr-lg-4">
                     <a class="nav-link" href="#">BLOG</a>
@@ -39,14 +39,15 @@
                     </a>
                     <div aria-labelledby="navbarDropdown" class="dropdown-menu ">
                         @foreach($categories as $category)
-                            <a class="dropdown-item" href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index3.html#"><img
+                            <a class="dropdown-item" href="{{route('productsPerCategory', $category->id)}}"><img
                                     height="34" id="dropdownfoto3" src="img/open helm.png" width="36"/>{{$category->name}}</a>
                             <div class="dropdown-divider"></div>
                         @endforeach
+
                     </div>
                 </li>
                 <li class="nav-item pr-lg-4">
-                    <a class="nav-link" href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index4.html#">CONTACTS</a>
+                    <a class="nav-link" href="{{'/contact'}}">CONTACTS</a>
                 </li>
 
             </ul>
@@ -56,10 +57,18 @@
                 <a class="search_icon float-right" href="#"><i class="fas fa-search pt-1"></i></a>
             </div>
             <div class="mt-3 mt-lg-0">
-                <a href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index2.html#"> <i
-                        class="fas fa-shopping-cart fa-2x pl-lg-4 shopgebruiker "></i></a>
+                <a href="{{route('checkout')}}">
+                     <span class="fa-stack fa-2x" data-count="{{Session::has('cart') ? Session::get('cart')->totalQuantity:
+                '0'}}">
+                    <i class="fa fa-shopping-cart fa-stack-2x shopgebruiker"></i>
+                </span>
+                </a>
+
 
                 <a href="{{ route('login') }}"><i class="far fa-user fa-2x pl-3 pr-lg-3 shopgebruiker"></i></a>
+
+
+                </span>
             </div>
 
         </div>

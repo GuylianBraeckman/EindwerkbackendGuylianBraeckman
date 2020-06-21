@@ -7,71 +7,63 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 bg-white px-lg-0 pl-lg-2">
-                    <div class="list-group-flush">
-                        <button class="list-group-item" type="button">
+                    <div class="list-group-flush ">
+                        <label class="list-group-item" type="button">
                             <p class="sidebartitle">CATEGORIES</p>
-                        </button>
-                        <button class="list-group-item list-group-item-action pt-5 sidebartekst" type="button">ALL</button>
-                        <button class="list-group-item list-group-item-action py-3 sidebartekst" type="button">MODULAR HELMET</button>
-                        <button class="list-group-item list-group-item-action py-3 sidebartekst" type="button">HALF FACE HELMET</button>
-                        <button class="list-group-item list-group-item-action py-3 sidebartekst" type="button">FULL FACE HELMET</button>
-                    </div>
-                    <div class="list-group-flush">
+                        </label>
+                        <div class="d-none d-lg-block">
+                            <a href="{{route('productpage')}}"
+                               class="list-group-item list-group-item-action list-group-item-primary bg-white">All</a>
+                            @foreach($categories as $category)
+                                <a href="{{route('productsPerCategory', $category->id)}}"
+                                   class="list-group-item list-group-item-action list-group-item-primary bg-white">{{$category->name}}</a>
+                            @endforeach
+                        </div>
+                        <div class="dropdown d-block d-lg-none">
 
-                        <button class="list-group-item" type="button">
-                            <p class="sidebartitle mt-5">FILTER BY</p>
-                        </button>
-                        <a class="nav-link dropdown-toggle font-size-lg text-reset border-bottom mb-6 sidebartekst" data-toggle="collapse"
-                           href="#brandCollapse">
-                            Brand
-                        </a>
+                            <button class="btn btn-secondary dropdown-toggle btn btn-primary w-100" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                CATEGORIES
+                            </button>
+                            <div class="dropdown-menu w-100  " aria-labelledby="dropdownMenuButton">
+                                <a href="{{route('productpage')}}"
+                                   class="dropdown-item">All</a>
+                                @foreach($categories as $category)
 
-                        <!-- Collapse -->
-                        <div class="collapse" data-target="#brandGroup" data-toggle="simplebar" id="brandCollapse">
-
-                            <!-- Search -->
-                            <div data-options="{&quot;valueNames&quot;: [&quot;name&quot;]}" data-toggle="lists">
-
-                                <!-- Input group -->
-                                <div class="input-group input-group-merge mb-6">
-                                    <input class="form-control form-control-xs search" placeholder="Search Brand" type="search">
-
-                                    <!-- Button -->
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-border btn-xs">
-                                            <i class="fe fe-search"></i>
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                                <!-- Form group -->
-                                <div class="form-group form-group-overflow list-group-flush mb-6" id="brandGroup">
-                                    <div class="list">
-                                        <div class="custom-control custom-checkbox mt-3 mb-1">
-                                            <input class="custom-control-input" id="brandOne" type="checkbox">
-                                            <label class="custom-control-label name" for="brandOne">
-                                                <p class="sidebartekst mb-0">NOLAN</p>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="custom-control custom-checkbox mb-1">
-                                        <input class="custom-control-input" id="brandTwo" type="checkbox">
-                                        <label class="custom-control-label name" for="brandTwo">
-                                            <p class="sidebartekst mb-0">ZEUS</p>
-                                        </label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox mb-1">
-                                        <input class="custom-control-input" id="brandThree" type="checkbox">
-                                        <label class="custom-control-label name" for="brandThree">
-                                            <p class="sidebartekst">CABERG</p>
-                                        </label>
-                                    </div>
-
-                                </div>
-
+                                    <a class="dropdown-item " href="{{route('productsPerBrand', $category->id)}}">{{$category->name}}</a>
+                                @endforeach
                             </div>
                         </div>
+
+                    </div>
+
+
+                    <div class="list-group-flush">
+
+                        <label class="list-group-item" type="button">
+                            <p class="sidebartitle mt-5">FILTER BY</p>
+                        </label>
+                        <div class="dropdown d-block d-lg-none">
+                            <button class="btn btn-secondary dropdown-toggle btn btn-primary w-100" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                BRANDS
+                            </button>
+                            <div class="dropdown-menu w-100  " aria-labelledby="dropdownMenuButton">
+                                @foreach($brands as $brand)
+                                    <a class="dropdown-item " href="{{route('productsPerBrand', $brand->id)}}">{{$brand->name}}</a>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="d-none d-lg-block">
+                            @foreach($brands as $brand)
+                                <a href="{{route('productsPerBrand', $brand->id)}}"
+                                   class="list-group-item list-group-item-action list-group-item-primary bg-white">{{$brand->name}}</a>
+                            @endforeach
+                        </div>
+
+
+                        <!-- Collapse -->
+
                         <div>
                             <a class="nav-link dropdown-toggle font-size-lg text-reset border-bottom mb-6 sidebartekst"
                                data-toggle="collapse"
@@ -165,9 +157,10 @@
                                     <div class="card-body d-flex flex-column">
                                         <h5 class="card-title d-flex justify-content-center text-center">{{$product->name}}</h5>
                                         <p class="card-text d-flex justify-content-center mt-auto text-center">{{$product->price}}</p>
-                                        <a href="https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index5.html#"
+                                        <a href="{{route('detail', $product->id)}}"
                                            class="btn btn-primary buy-now d-flex justify-content-center mx-5 mx-lg-auto">Buy now</a>
                                     </div>
+                                   
                                 </div>
                             </div>
                         @endforeach

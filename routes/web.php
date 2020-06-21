@@ -47,11 +47,14 @@ Route::resource('admin/blogs','AdminBlogsController');
 
 
 //FRONT ROUTES
-Route::get('/products','FrontendController@products');
+Route::get('/products','FrontendController@products')->name('productpage');
 Route::get('products/brand/{id}','FrontendController@productsPerBrand')->name('productsPerBrand');
-
-
-
-
-
-
+Route::get('products/category/{id}','FrontendController@productsPerCategory')->name('productsPerCategory');
+Route::get('/contact','FrontendController@contact')->name('contactpage');
+Route::get('/checkout','FrontendController@cart')->name('checkout');
+Route::get('/cart','FrontendController@cart')->name('checkout');
+Route::post('/cart','FrontendController@updateQuantity')->name('quantity');
+Route::post('/checkout','FrontendController@updateQuantity')->name('quantity');
+Route::get('/products/addToCart/{id}', 'FrontendController@addToCart')->name('addToCart');
+Route::get('/detail/{id}','FrontendController@detail')->name('detail');
+Route::get('/removeItem/{id}','FrontendController@removeItem')->name('removeItem');

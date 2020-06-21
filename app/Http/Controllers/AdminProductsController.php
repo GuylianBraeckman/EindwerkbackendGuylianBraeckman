@@ -142,4 +142,15 @@ class AdminProductsController extends Controller
         return view('admin.products.index',compact('products','brands'));
 
     }
+
+    public function productsPerCategory($id){
+        $categories = Category::all();
+        $products = Product::with(['category','brand','photo'])->where('category_id','=', $id)->get();
+        return view('admin.products.index',compact('products','brands'));
+    }
+
+
+
+
+
 }

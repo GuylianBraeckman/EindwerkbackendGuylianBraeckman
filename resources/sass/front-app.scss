@@ -1,3 +1,11 @@
 @import '../front_assets/css/bootstrap.min.css';
 @import '../front_assets/css/_style.css';
+@import '../front_assets/css/front_style.css';
 @import '../../resources/admin_assets/vendor/fontawesome-free/css/all.min.css';
+
+
+$fa-font-path:"../webfonts";
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+
