@@ -30,17 +30,18 @@
                     <a class="nav-link" href="{{'/'}}">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item pr-lg-4">
-                    <a class="nav-link" href="#">BLOG</a>
+                    <a class="nav-link" href="{{'/blog'}}">BLOG</a>
                 </li>
                 <li class="nav-item dropdown pr-lg-4">
-                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href=""
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                       href="{{route('productpage')}}"
                        id="navbarDropdown" role="button">
                         CATEGORY
                     </a>
                     <div aria-labelledby="navbarDropdown" class="dropdown-menu ">
                         @foreach($categories as $category)
                             <a class="dropdown-item" href="{{route('productsPerCategory', $category->id)}}"><img
-                                    height="34" id="dropdownfoto3" src="img/open helm.png" width="36"/>{{$category->name}}</a>
+                                    height="34" id="dropdownfoto3" src="" width="36"/>{{$category->name}}</a>
                             <div class="dropdown-divider"></div>
                         @endforeach
 

@@ -92,6 +92,23 @@ class FrontendController extends Controller
         return view('frontend.detail' , compact('product', 'photos', 'categories','brands'));
     }
 
+    public function single_post($id){
+        $blog = Blog::findOrFail($id);
+        $photos = Photo::all();
+        $products = Product::all();
+        $categories = Category::all();
+        $brands = Brand::all();
+        return view('frontend.single_post' , compact('products', 'photos', 'categories','brands','blog'));
+    }
+
+    public function blog(){
+        $blogs = Blog::all();
+        $photos = Photo::all();
+        $categories = Category::all();
+        $brands = Brand::all();
+        return view('frontend.blog' , compact('product', 'photos', 'categories','brands','blogs'));
+    }
+
     public function updateQuantity(Request $request){
         $oldCart = Session::has('cart') ? Session::get('cart'):null;
         $cart = new Cart($oldCart);
@@ -111,4 +128,6 @@ class FrontendController extends Controller
 
         return redirect('/checkout');
     }
+
+
 }

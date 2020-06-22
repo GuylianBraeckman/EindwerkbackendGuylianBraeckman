@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ColorSeeder::class);
         $this->call(ProductSeeder::class);
         $this->call(BlogSeeder::class);
-
+        $this->call(PaymentPlatformsTableSeeder::class);
+        $this->call(CurrenciesTableSeeder::class);
 
     }
 

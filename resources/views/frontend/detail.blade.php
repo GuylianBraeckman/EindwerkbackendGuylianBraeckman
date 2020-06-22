@@ -11,7 +11,7 @@
                        href=https://syntrawestcloud.be/FullStack/Guylian/eindwerk/index3.html#><i
                             class="fas fa-arrow-left p-1"></i> BACK TO
                         CATEGORIES</a>
-                    <img class="d-flex justify-content-center mx-auto" src="img/grotehelm.png"/><span
+                    <img class="d-flex justify-content-center mx-auto" src="images/grotehelm.png"/><span
                         class="sr-only">Previous
             </span>
                     <h5 class="mt-5 d-flex justify-content-center">TEIXEIRA ADVENTURES</h5>

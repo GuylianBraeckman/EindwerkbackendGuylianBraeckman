@@ -373,7 +373,7 @@
                         <div class="col-xl-4 lijn">
                             <div class="d-flex">
                                 <h3>BLOG x EVENTS</h3>
-                                <p class="underline ml-auto">SEE ALL</p>
+                                <a  class="underline ml-auto" href="{{'/blog'}}">SEE ALL</a>
                             </div>
                             @foreach($blogs as $blog)
                             <div class="row">
@@ -382,9 +382,10 @@
 
                                 </div>
                                 <div class="col-8">
-                                    <p class="datums">02/08/2017</p>
+                                    <p class="datums">{{$blog->created_at}}</p>
                                     <p class="text-dark montserratlight">{{$blog->title}}</p>
-                                    <p class="underline">READ MORE</p>
+
+                                    <a  class="underline ml-auto" href="{{route('single_post', $blog->id)}}">READ MORE</a>
                                 </div>
                             </div>
                             @endforeach
@@ -437,11 +438,11 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class=" brandsdiv d-flex justify-content-center">
-                        <img class="py-5" src="img/brand2.png"/>
-                        <img class="pl-3 pl-lg-5 py-5" src="img/brand3.png"/>
-                        <img class="pl-3 pl-lg-5 py-5" src="img/brand1.png"/>
-                        <img class="pl-3 pl-lg-5 py-5" src="img/brand5.png"/>
-                        <img class="pl-3 pl-lg-5 pb-3 mb-5" src="img/brand4.png"/>
+                        <img class="py-5" src="../../front_assets/img/brand1.png"/>
+                        <img class="pl-3 pl-lg-5 py-5" src="../../front_assets/img/brand2.png"/>
+                        <img class="pl-3 pl-lg-5 py-5" src="../../front_assets/img/brand3.png"/>
+                        <img class="pl-3 pl-lg-5 py-5" src="../../front_assets/img/brand4.png"/>
+                        <img class="pl-3 pl-lg-5 pb-3 mb-5" src="../../front_assets/img/brand5.png"/>
                     </div>
                 </div>
             </div>

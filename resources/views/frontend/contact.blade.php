@@ -9,25 +9,32 @@ Contact
                 <div class="row">
                     <div class="col-10 offset-1">
                         <p class="headerSocial mt-3">GET IN TOUCH WITH US TO KNOW HOW WE CAN HELP</p>
+                        @if(Session::has('mail_sent'))
+                            <p class="alert alert-success">{{session('mail_sent')}}</p>
+                        @endif
+                        <form method="POST" action={{action('ContactController@store')}}>
+                            @csrf
+                            <div class="form-group mb-4">
+                                <input autocomplete="name" class="formdetails form-control" name="name" placeholder="NAME" required="" type="text"
+                                       value="">
+                            </div>
+                            <div class="form-group mb-4">
+                                <input autocomplete="name" class="formdetails form-control" id="contact-email" name="email"
+                                       placeholder="EMAIL"
+                                       required=""
+                                       type="text"
+                                       value="">
+                            </div>
+                            <div class="form-group mb-4 pb-5 pt-2">
+                    <textarea name="message" id="message" class="formdetails form-control"  placeholder="WRITE A FEW WORDS"
 
-                        <div class="form-group mb-4">
-                            <input autocomplete="name" class="formdetails form-control" name="name" placeholder="NAME" required="" type="text"
-                                   value="">
-                        </div>
-                        <div class="form-group mb-4">
-                            <input autocomplete="name" class="formdetails form-control" name="name" placeholder="EMAIL" required="" type="text"
-                                   value="">
-                        </div>
-                        <div class="form-group mb-4">
-                            <input autocomplete="name" class="formdetails form-control" name="name" placeholder="COMPANY" required="" type="text"
-                                   value="">
-                        </div>
-                        <div class="form-group mb-4 pb-5 pt-2">
-                    <textarea name="message" class="formdetails form-control" value="" placeholder="WRITE A FEW WORDS"
-                              id="exampleFormControlTextarea"
                               rows="5" required=""></textarea>
-                        </div>
-                        <a href="#" class="btn btn-primary buy-now d-flex justify-content-center mx-5 mx-lg-auto">SEND</a>
+                            </div>
+                            <button class="btn btn-primary buy-now d-flex justify-content-center mx-5 mx-lg-auto" type="submit"> SEND
+                            </button>
+                        </form>
+
+
                         <div class="mt-5">
                             Or call us at
                             <a href="tel:+62896706255135">+62-896-7062-55135</a>

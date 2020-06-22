@@ -160,7 +160,7 @@
                                         <a href="{{route('detail', $product->id)}}"
                                            class="btn btn-primary buy-now d-flex justify-content-center mx-5 mx-lg-auto">Buy now</a>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         @endforeach

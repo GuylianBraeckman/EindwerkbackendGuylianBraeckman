@@ -58,3 +58,8 @@ Route::post('/checkout','FrontendController@updateQuantity')->name('quantity');
 Route::get('/products/addToCart/{id}', 'FrontendController@addToCart')->name('addToCart');
 Route::get('/detail/{id}','FrontendController@detail')->name('detail');
 Route::get('/removeItem/{id}','FrontendController@removeItem')->name('removeItem');
+Route::get('/blog', 'FrontendController@blog')->name('blog');
+Route::get('/single_post/{id}','FrontendController@single_post')->name('single_post');
+Route::get('/contact', 'ContactController@create');
+Route::post('/contact','ContactController@store');
+
