@@ -37,14 +37,13 @@ Route::group(['middleware' => 'admin'], function(){
 
 Route::resource('admin/users', 'AdminUsersController');
 Route::resource('admin/brands', 'AdminBrandsController');
-Route::resource('admin/categories','AdminCategoriesController');
 Route::resource('admin/products','AdminProductsController',['index'=>'admin.products.index']);
+Route::get('/admin/restore/{product}','adminProductsController@productRestore')->name('admin.productrestore');
 Route::resource('admin/categories','AdminCategoriesController');
 Route::resource('admin/products','AdminProductsController',['index'=>'admin.products.index']);
 Route::get('admin/products/brand/{id}','AdminProductsController@productsPerBrand')->name('admin.productsPerBrand');
 Route::resource('admin/photos','AdminPhotosController');
 Route::resource('admin/posts','AdminPostsController');
-Route::resource('admin/colors','AdminColorsController');
 Route::resource('admin/blogs','AdminBlogsController');
 
 

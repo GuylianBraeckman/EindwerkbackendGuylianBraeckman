@@ -17,19 +17,18 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->bigInteger('category_id')->unsigned()->index();
             $table->bigInteger('brand_id')->unsigned()->index();
-            $table->bigInteger('photo_id')->unsigned()->index();
-            $table->bigInteger('color_id')->unsigned()->index();
+            $table->bigInteger('photo_id')->unsigned()->index()->nullable();
             $table->string('name')->default('');
             $table->string('description');
             $table->decimal('price')->default(0);
+            $table->softDeletes();
             $table->timestamps();
 
             /**Leg de relatie tussen product en de brand, categorie en photo tabel. Maak geen gebruik van cascade**/
-            $table->unique(['category_id', 'brand_id','photo_id','color_id']);
+            $table->unique(['category_id', 'brand_id','photo_id']);
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
             $table->foreign('photo_id')->references('id')->on('photos')->onDelete('cascade');
-            $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
 
         });
     }

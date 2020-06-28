@@ -3,7 +3,7 @@
     All Products
 @endsection
 @section('content')
-    <h1 class="text-primary">All Products</h1>
+    <h1>All Products</h1>
     <hr>
     <div class="row">
         <div class="col-12">
@@ -21,8 +21,7 @@
             </div>
         </div>
         <div class="col-12 mt-3">
-            <table class="table table-bordered table-hover table-sm shadow rounded" id="brands-table">
-                <thead class="bg-primary text-white">
+            <table class="table table-striped">
                 <tr>
                     <th scope="row">Id</th>
                     <th scope="row">Image</th>
@@ -30,10 +29,10 @@
                     <th scope="row"><i class="fas fa-copyright"></i> Brand</th>
                     <th scope="row"><i class="fab fa-product-hunt"></i> Product</th>
                     <th scope="row">Description</th>
-                    <th scope="row">colors</th>
                     <th scope="row">Price</th>
                     <th scope="row">Created At</th>
                     <th scope="row">Updated At</th>
+                    <th scope="row">others</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -48,10 +47,26 @@
                                 <a href="{{route('products.edit', $product->id)}}"> {{$product->name}}</a>
                             </td>
                             <td>{{$product->description}}</td>
-                            <td>{{$product->color ? $product->color->name : 'GEEN KLEUR'}}</td>
                             <td>{{$product->price}}</td>
                             <td>{{$product->created_at}}</td>
                             <td>{{$product->updated_at}}</td>
+                            <td>
+                                <a class="btn btn-outline-warning rounded-pill mb-1" href="{{route('products.edit',
+                            $product->id)}}">Edit</a>
+                                @if($product->deleted_at != null)
+                                    <a class="btn btn-outline-success rounded-pill mb-1" href="{{route('admin.productrestore',
+                            $product->id)}}">Not Active</a>
+                                @else
+                                    {!! Form::open(['method'=>'DELETE', 'action'=>['AdminProductsController@destroy', $product->id]])
+                               !!}
+                                    <div class="form-group">
+                                        {!! Form::submit('Active',['class'=>'btn btn-outline-danger rounded-pill mb-1'])
+                                         !!}
+                                    </div>
+                                    {!! Form::close() !!}
+                                @endif
+
+                            </td>
                         </tr>
                     @endforeach
                 @endif

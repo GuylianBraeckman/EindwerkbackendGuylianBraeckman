@@ -3,14 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
     //
+    use SoftDeletes;
     protected $fillable = [
         'category_id', //foreign key van de tabel die verwijst naar categories
         'brand_id', //foreign key van de tabel die verwijst naar brands
-        'color_id',//foreign key van de tabel die verwijst naar het kleur
         'photo_id',//foreign key van de tabel die verwijst naar photos
         'name',
         'description',
@@ -25,9 +26,7 @@ class Product extends Model
     public function brand(){
         return $this->belongsTo(Brand::class);
 }
-    public function color(){
-        return $this->belongsTo(Color::class);
-    }
+
     public function category(){
         return $this->belongsTo(Category::class);
     }

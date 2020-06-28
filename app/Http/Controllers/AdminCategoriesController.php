@@ -100,4 +100,6 @@ class AdminCategoriesController extends Controller
 
         return redirect('admin/categories');
     }
+
+
 }

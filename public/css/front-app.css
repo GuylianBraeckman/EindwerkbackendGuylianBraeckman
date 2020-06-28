@@ -301,7 +301,6 @@ footer p.hover {
 
 .checkout {
   background: #ff4f37;
-  border-color: none;
   color: white;
   font-family: Mobold;
   font-size: 14px; }
@@ -356,6 +355,8 @@ footer p.hover {
     background: url(/images/motars.jpg?b7c575a9668220c50b80dabf2d336ecb) center center;
     height:100px;
 }
+
+
 
 
 @media (min-width: 992px) {
@@ -539,7 +540,6 @@ section{
 }
 
 .card-img img {
-    width: 100%;
     height: auto;
     display: block;
 }

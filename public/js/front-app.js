@@ -43432,11 +43432,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
 __webpack_require__(/*! ../front_assets/scss/vendor/js/jquery.min */ "./resources/front_assets/scss/vendor/js/jquery.min.js");
 
 __webpack_require__(/*! ../front_assets/scss/vendor/js/bootstrap.min */ "./resources/front_assets/scss/vendor/js/bootstrap.min.js");
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 /***/ }),
 

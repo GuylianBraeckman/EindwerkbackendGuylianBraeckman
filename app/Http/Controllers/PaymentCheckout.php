@@ -11,7 +11,7 @@ use App\Photo;
 use App\Product;
 use Illuminate\Http\Request;
 
-class PaymentCheckout extends Controller
+class PaymentCheckout extends FrontendController
 {
     /**
      * Create a new controller instance.
@@ -32,13 +32,7 @@ class PaymentCheckout extends Controller
     {
 
         $currencies = Currency::all(); //eur usd gbp
-        $brands = Brand::all();
-        $categories= Category::all();
-        $products = Product::all();
-        $photos = Photo::all();
-        $blogs = Blog::all();
         $paymentPlatforms = PaymentPlatform::all(); //paypal en stripe
-        return view('payment')->with(['currencies'=> $currencies,'paymentPlatforms'=> $paymentPlatforms, $brands, $categories, $products,
-         $photos, $blogs   ]);
+        return view('payment')->with(['currencies'=> $currencies,'paymentPlatforms'=> $paymentPlatforms]);
     }
 }

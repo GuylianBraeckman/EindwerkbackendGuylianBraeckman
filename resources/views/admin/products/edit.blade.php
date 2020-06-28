@@ -51,13 +51,6 @@
                                 <div class="input-group-prepend">
                                     <label class="input-group-text"><i class="fas fa-tags"></i></label>
                                 </div>
-                                <select class="custom-select" name="color_id">
-                                    <option value="" disabled selected>Select a color</option>
-
-                                    @foreach($colors as $color)
-                                        <option value=" {{$color->id}}"> {{$color->name}}</option>
-                                    @endforeach
-                                </select>
                             </div>
                         </div>
                         <div class="form-group">

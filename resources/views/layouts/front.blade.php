@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    {{--  <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,700,800&display=swap" rel="stylesheet">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" media="all" rel="stylesheet">--}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {{-- <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,700,800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" media="all" rel="stylesheet">--}}
 
     <link rel="stylesheet" href="{{asset('css/front-app.css')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" media="all" rel="stylesheet">
     <title>@yield('title')</title>
 
 </head>
 <body>
 
 <header>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-white px-0">
         <a class="navbar-brand pl-2 mr-auto" href="#">EVNX.</a>
         <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
-                data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+                data-target="#navigationbar" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navigationbar">
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active pr-lg-4">
@@ -83,34 +83,33 @@
                 <h4 class="pb-5 pl-5">CATEGORIES</h4>
                 <div class="row">
                     <div class="col-6 pl-5">
-                        <p>FULLFACE</p>
-                        <p>MODULAR</p>
-                        <p>HALFFACE HELMET</p>
-                        <p>HELM MULTI MODEL</p>
-                        <p>HELMET CARE</p>
+                        <a href=""><p>FULLFACE</p></a>
+                        <a href=""><p>MODULAR</p></a>
+                        <a href=""><p>HALFFACE HELMET</p></a>
+                        <a href=""><p>HELM MULTI MODEL</p></a>
+                        <a href=""><p>HELMET CARE</p></a>
                     </div>
                     <div class="col-6">
-                        <p>VISOR</p>
-                        <p>BALACLAVA</p>
-                        <p>INTERCOM</p>
-                        <p>PINLOCK (ANTI FOG)</p>
+                        <a href=""><p>VISOR</p></a>
+                        <a href=""><p>BALACLAVA</p></a>
+                        <a href=""><p>INTERCOM</p></a>
+                        <a href=""><p>PINLOCK (ANTI FOG)</p></a>
                     </div>
                 </div>
             </div>
             <div class="col-3 pl-5">
                 <h4 class="pb-5">CORPORATE INFO</h4>
-                <p>ABOUT US</p>
-                <p>CAREERS</p>
-                <p>PRIVACY POLICY</p>
-                <p>TERMS & CONDITIONS</p>
+                <a href=""><p>ABOUT US</p></a>
+                <a href=""><p>CAREERS</p></a>
+                <a href=""><p>PRIVACY POLICY</p></a>
+                <a href=""><p>TERMS & CONDITIONS</p></a>
             </div>
             <div class="col-3">
                 <h4 class="pb-5">CUSTOMER SERVICE</h4>
-                <p>FAQ</p>
-                <p>RETURN</p>
-                <p>DELIVERY</p>
-                <p>ORDER TRACKING</p>
-                <p>CONTACT US</p>
+                <a href=""><p>FAQ</p></a>
+                <a href=""><p>RETURN</p></a>
+                <a href=""><p>ORDER TRACKING</p></a>
+                <a href=""><p>CONTACT US</p></a>
             </div>
         </div>
         <div class="row pl-4 pt-5 mr-0">
@@ -157,5 +156,8 @@
 <script src="js/bootstrap.min.js">
 </script>--}}
 <script src="{{asset('js/front-app.js')}}"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 </body>
 </html>

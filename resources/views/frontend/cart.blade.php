@@ -4,6 +4,11 @@
 @endsection
 @section('content')
     <main class="bgcart">
+        <div class="titeltjeblogs mb-5">
+            <div class="container">
+                <h1 class="text-white">Shopping Cart</h1>
+            </div>
+        </div>
         <div class="container-fluid">
             @if(Session::has('cart'))
                 <div class="row">
@@ -31,14 +36,10 @@
                             }}</small>
                                         </div>
 
-                                        <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                                        <div class="col-12 col-sm-12 col-md-4 text-md-right row">
                                             <div class="col-3 col-sm-3 col-md-6 text-xl-right" style="padding-top: 5px">
-                                                <h6><strong>{{$item['product_price']}} <span class="text-muted">€</span></strong></h6>
+                                                <h6>{{$item['product_price']}} <span class="text-muted">€</span></h6>
                                             </div>
-                                            <small class="text-muted">Item Subtotal:&euro;
-                                                {{$item['product_price']*$item['quantity']}}</small>
-
-                                            <small class="text-muted">Quantity::</small>
                                             <form method="POST" action="{{action('FrontendController@updateQuantity')}}"
                                                   enctype="multipart/form-data">
 
@@ -99,16 +100,11 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="row">
-                                                    <div class="col-4">
-                                                        <input class="form-control" placeholder="coupon code" type="text">
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <input class="checkout btn btn-default" type="submit" value="APPLY COUPON">
-                                                    </div>
-
-                                                    <div>
+                                                    <div class="col-8">
 
                                                     </div>
+                                                    <div class="col-4">
+
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -152,7 +148,7 @@
 
                                             <select id="inputState" class="form-control">
                                                 @foreach($countries as $country)
-                                                <option selected>{{$country->name}}</option>
+                                                    <option selected>{{$country->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

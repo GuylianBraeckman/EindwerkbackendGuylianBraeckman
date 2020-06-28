@@ -105,25 +105,10 @@
             <span>Add Blogs</span></a>
     </li>
     <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-    <div class="sidebar-heading">
-        COLORS
-    </div>
 
-
-    <!-- Nav Item - Users -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('colors.index')}}">
-            <i class="fas fa-users"></i>
-            <span>All Colors</span></a>
-    </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('colors.create')}}">
-            <i class="fas fa-plus-circle"></i>
-            <span>Add Colors</span></a>
-    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
@@ -132,19 +117,6 @@
     </div>
 
 
-    <!-- Nav Item - Users -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('posts.index')}}">
-            <i class="fas fa-users"></i>
-            <span>All posts</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('posts.create')}}">
-            <i class="fas fa-plus-circle"></i>
-            <span>Add posts</span></a>
-    </li>
 
 
     <!-- Divider -->

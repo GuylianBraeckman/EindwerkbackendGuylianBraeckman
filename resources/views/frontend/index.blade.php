@@ -29,9 +29,7 @@
                                                         <p class="witteknopkes mb-0">PRICE</p>
                                                         <p class="oranjetekst mb-0 pl-1">€125.90</p>
                                                     </div>
-                                                    <div class="borders col-4 d-flex align-items-center oranjestuk">
-                                                        <p class="mb-0">VIEW PRODUCT</p>
-                                                    </div>
+
                                                 </div>
 
                                             </div>
@@ -111,254 +109,135 @@
                 <div class="carousel-inner w-100" role="listbox">
 
                     <div class="carousel-item row no-gutters active">
-                        <div class="d-none d-xl-block">
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
+                        @foreach($products->slice(0,4) as $product)
+                            <div class="d-none d-xl-block">
+                                <div class="col-lg-3 float-left">
+                                    <div class="row achtergrond2">
 
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ZEUS Z-806 NEW
-                                            SUPERTECH II50 MATT</p>
-                                        <div class=" row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
+                                        <div class="col-10 offset-1">
+                                            <p class="pt-5 text-left helmtype montserratlight">{{$product->name}}</p>
+                                            <div class=" row">
+                                                <div class="col-6">
+                                                    <p class="prijs text-left">{{$product->price}}</p>
+                                                    <a href="{{route('detail', $product->id)}}"><button class="mr-auto buy-now mt mb-4">BUY NOW</button></a>
+                                                </div>
+                                                <div class="col-6">
+                                                    <img class="pr-5 img-fluid imgfoto" src="{{$product->photo->file}}"/></div>
                                             </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm5.png"/></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ARAI TOUR CROSS 3 - DETOUR RED</p>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
-                                            </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm6.png"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ARAI TOUR CROSS 3 - DETOUR RED</p>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
-                                            </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm6.png"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ARAI TOUR CROSS 3 - DETOUR RED</p>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
-                                            </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm6.png"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-block d-xl-none">
-                            <div class=" achtergrond w-100 float-left">
-                                <div class="row">
-                                    <div class="col-1"></div>
-                                    <div class="col-5">
-                                        <p class="pt-5 text-left helmtype montserratlight">HJC CL-17 CAPTAIN AMERICA (SNELL)</p>
-                                        <p class="prijs text-left">€350,5</p>
-                                        <button class="mr-auto buy-now mt mb-4">BUY NOW</button>
-                                    </div>
-                                    <div class="col-6">
-                                        <img class="pr-5 pt-5 img-fluid imgfoto" src="img/helm10.png"/>
-                                    </div>
+                        @endforeach
+                        @foreach($products->slice(0,4) as $product)
+                            <div class="d-block d-xl-none">
+                                <div class=" achtergrond w-100 float-left">
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                        <div class="col-5">
+                                            <p class="pt-5 text-left helmtype montserratlight">{{$product->name}}</p>
+                                            <p class="prijs text-left">{{$product->price}}</p>
 
+
+                                        </div>
+                                        <div class="col-6">
+                                            <img class="pr-5 pt-5 img-fluid imgfoto" src="{{$product->photo->file}}"/>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
+                        @endforeach
                     </div>
                     <div class="carousel-item row no-gutters">
                         <div class="d-none d-xl-block">
 
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ZEUS Z-806 NEW
-                                            SUPERTECH II50 MATT</p>
-                                        <div class=" row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
+                            @foreach($products->slice(0,4) as $product)
+                                <div class="d-none d-xl-block">
+                                    <div class="col-lg-3 float-left">
+                                        <div class="row achtergrond2">
+
+                                            <div class="col-10 offset-1">
+                                                <p class="pt-5 text-left helmtype montserratlight">{{$product->name}}</p>
+                                                <div class=" row">
+                                                    <div class="col-6">
+                                                        <p class="prijs text-left">{{$product->price}}</p>
+                                                        <a href="{{route('detail', $product->id)}}"><button class="mr-auto buy-now mt mb-4">BUY NOW</button></a>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <img class="pr-5 img-fluid imgfoto" src="{{$product->photo->file}}"/></div>
+                                                </div>
                                             </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm5.png"/></div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ARAI TOUR CROSS 3 - DETOUR RED</p>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
-                                            </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm6.png"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ZEUS Z-806 NEW
-                                            SUPERTECH II50 MATT</p>
-                                        <div class=" row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
-                                            </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm5.png"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ARAI TOUR CROSS 3 - DETOUR RED</p>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
-                                            </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm6.png"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                         <div class="d-block d-xl-none">
-                            <div class="float-left w-100 pb-5 mb-1">
-                                <div class="row achtergrond">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ZEUS Z-806 NEW
-                                            SUPERTECH II50 MATT</p>
-                                        <div class=" row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
+                            @foreach($products->slice(0,4) as $product)
+                                <div class="d-block d-xl-none">
+                                    <div class=" achtergrond w-100 float-left">
+                                        <div class="row">
+                                            <div class="col-1"></div>
+                                            <div class="col-5">
+                                                <p class="pt-5 text-left helmtype montserratlight">{{$product->name}}</p>
+                                                <p class="prijs text-left">{{$product->price}}</p>
+                                                <a href="{{route('detail', $product->id)}}"><button class="mr-auto buy-now mt mb-4">BUY NOW</button></a>
                                             </div>
                                             <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm5.png"/></div>
+                                                <img class="pr-5 pt-5 img-fluid imgfoto" src="{{$product->photo->file}}"/>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="carousel-item row no-gutters">
                         <div class="d-none d-xl-block">
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ZEUS Z-806 NEW
-                                            SUPERTECH II50 MATT</p>
-                                        <div class=" row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
+                            @foreach($products->slice(0,4) as $product)
+                                <div class="d-none d-xl-block">
+                                    <div class="col-lg-3 float-left">
+                                        <div class="row achtergrond2">
+
+                                            <div class="col-10 offset-1">
+                                                <p class="pt-5 text-left helmtype montserratlight">{{$product->name}}</p>
+                                                <div class=" row">
+                                                    <div class="col-6">
+                                                        <p class="prijs text-left">{{$product->price}}</p>
+                                                        <a href="{{route('detail', $product->id)}}"><button class="mr-auto buy-now mt mb-4">BUY NOW</button></a>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <img class="pr-5 img-fluid imgfoto" src="{{$product->photo->file}}"/></div>
+                                                </div>
                                             </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm5.png"/></div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ARAI TOUR CROSS 3 - DETOUR RED</p>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
-                                            </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm6.png"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ZEUS Z-806 NEW
-                                            SUPERTECH II50 MATT</p>
-                                        <div class=" row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
-                                            </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm5.png"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 float-left">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ARAI TOUR CROSS 3 - DETOUR RED</p>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
-                                            </div>
-                                            <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm6.png"/></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                         <div class="d-block d-xl-none">
-                            <div class="float-left w-100 pb-5 mb-1">
-                                <div class="row achtergrond2">
-                                    <div class="col-10 offset-1">
-                                        <p class="pt-5 text-left helmtype montserratlight">ARAI TOUR CROSS 3 - DETOUR RED</p>
+                            @foreach($products->slice(0,4) as $product)
+                                <div class="d-block d-xl-none">
+                                    <div class=" achtergrond w-100 float-left">
                                         <div class="row">
-                                            <div class="col-6">
-                                                <p class="prijs text-left">€350.5</p>
-                                                <button class="mr-auto buy-now mt-5 mb-4">BUY NOW</button>
+                                            <div class="col-1"></div>
+                                            <div class="col-5">
+                                                <p class="pt-5 text-left helmtype montserratlight">{{$product->name}}</p>
+                                                <p class="prijs text-left">{{$product->price}}</p>
+                                                <a href="{{route('detail', $product->id)}}"><button class="mr-auto buy-now mt mb-4">BUY NOW</button></a>
                                             </div>
                                             <div class="col-6">
-                                                <img class="pr-5 img-fluid imgfoto" src="img/helm6.png"/></div>
+                                                <img class="pr-5 pt-5 img-fluid imgfoto" src="{{$product->photo->file}}"/>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
 
 
@@ -373,21 +252,21 @@
                         <div class="col-xl-4 lijn">
                             <div class="d-flex">
                                 <h3>BLOG x EVENTS</h3>
-                                <a  class="underline ml-auto" href="{{'/blog'}}">SEE ALL</a>
+                                <a class="underline ml-auto" href="{{'/blog'}}">SEE ALL</a>
                             </div>
                             @foreach($blogs as $blog)
-                            <div class="row">
-                                <div class="col-4">
-                                    <img class="img-fluid w-100" src={{$blog->photo->file}}/>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img class="img-fluid w-100" src={{$blog->photo->file}}/>
 
-                                </div>
-                                <div class="col-8">
-                                    <p class="datums">{{$blog->created_at}}</p>
-                                    <p class="text-dark montserratlight">{{$blog->title}}</p>
+                                    </div>
+                                    <div class="col-8">
+                                        <p class="datums">{{$blog->created_at}}</p>
+                                        <p class="text-dark montserratlight">{{$blog->title}}</p>
 
-                                    <a  class="underline ml-auto" href="{{route('single_post', $blog->id)}}">READ MORE</a>
+                                        <a class="underline ml-auto" href="{{route('single_post', $blog->id)}}">READ MORE</a>
+                                    </div>
                                 </div>
-                            </div>
                             @endforeach
                         </div>
                         <div class="d-none d-xl-block mt-5 mt-lg-0 img-fluid bannerbg col-lg-8">
@@ -438,11 +317,11 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class=" brandsdiv d-flex justify-content-center">
-                        <img class="py-5" src="../../front_assets/img/brand1.png"/>
-                        <img class="pl-3 pl-lg-5 py-5" src="../../front_assets/img/brand2.png"/>
-                        <img class="pl-3 pl-lg-5 py-5" src="../../front_assets/img/brand3.png"/>
-                        <img class="pl-3 pl-lg-5 py-5" src="../../front_assets/img/brand4.png"/>
-                        <img class="pl-3 pl-lg-5 pb-3 mb-5" src="../../front_assets/img/brand5.png"/>
+                        <a href="http://www.nolanhelmets.com"><img src="images/brand1.jpg" alt=""></a>
+                        <a href="http://www.nolanhelmets.com"><img src="images/brand2.jpg" alt=""></a>
+                        <a href="http://www.nolanhelmets.com"><img src="images/brand3.jpg" alt=""></a>
+                        <a href="http://www.nolanhelmets.com"><img src="images/brand4.jpg" alt=""></a>
+                        <a href="http://www.nolanhelmets.com"><img src="images/brand5.jpg" alt=""></a>
                     </div>
                 </div>
             </div>

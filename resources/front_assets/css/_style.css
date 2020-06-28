@@ -307,7 +307,6 @@ footer p.hover {
 
 .checkout {
   background: #ff4f37;
-  border-color: none;
   color: white;
   font-family: Mobold;
   font-size: 14px; }
@@ -362,6 +361,8 @@ footer p.hover {
     background: url("../img/motars.jpg") center center;
     height:100px;
 }
+
+
 
 
 @media (min-width: 992px) {

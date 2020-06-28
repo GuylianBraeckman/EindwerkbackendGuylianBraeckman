@@ -5,7 +5,7 @@
 @section('content')
 
 
-    <h1 class="text-primary">All Products</h1>
+    <h1>All Products</h1>
     <hr>
     <div class="row">
         <div class="col-12">
@@ -16,7 +16,7 @@
         </div>
         <div class="col-12 mt-3">
             <table class="table table-bordered table-hover table-sm shadow rounded" id="brands-table">
-                <thead class="bg-primary text-white">
+                <table class="table table-striped">
                 <tr>
                     <th scope="row">Id</th>
                     <th scope="row">Image</th>

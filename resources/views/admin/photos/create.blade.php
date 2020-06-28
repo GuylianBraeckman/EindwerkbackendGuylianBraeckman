@@ -18,7 +18,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Create Photo', ['class'=>'btn btn-primary rounded-0'])
+                {!! Form::submit('Create Photo', ['class'=>'btn btn-success rounded-0'])
                  !!}
             </div>
             {!! Form::close() !!}

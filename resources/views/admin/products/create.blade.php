@@ -36,20 +36,6 @@
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <label class="input-group-text"><i class="fas fa-tags"></i></label>
-                        </div>
-                        <select class="custom-select" name="color_id">
-                            <option value="" disabled selected>Select a color</option>
-
-                            @foreach($colors as $color)
-                                <option value=" {{$color->id}}"> {{$color->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
                             <label class="input-group-text"><i class="fas fa-copyright"></i></label>
                         </div>
                         <select class="custom-select" name="brand_id">
@@ -87,7 +73,7 @@
             </div>
             <div class="col-12">
                 <div class="form-group">
-                    <button class="btn btn-primary" type="submit"><i class="fas fa-plus-circle"></i> Create
+                    <button class="btn btn-success rounded-0" type="submit"><i class="fas fa-plus-circle"></i> Create
                         Product
                     </button>
                 </div>
