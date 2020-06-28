@@ -3,5 +3,4 @@
     DASHBOARD
     @endsection
 @section('content')
-    test content
     @endsection

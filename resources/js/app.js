@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-//require('./bootstrap');
+require('./bootstrap');
 require('../../resources/admin_assets/vendor/jquery/jquery');
 require('../../resources/admin_assets/vendor/bootstrap/js/bootstrap.bundle.min');
 require('../../resources/admin_assets/vendor/jquery-easing/jquery.easing.min');
@@ -12,6 +12,8 @@ require('../../resources/admin_assets/js/sb-admin-2.min');
 require('../../resources/admin_assets/vendor/chart.js/Chart.bundle.min');
 require('../../resources/admin_assets/js/demo/chart-area-demo');
 require('../../resources/admin_assets/js/demo/chart-pie-demo');
+
+require('./front-app');
 
 window.Vue = require('vue');
 

@@ -12,6 +12,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" media="all" rel="stylesheet">
     <title>@yield('title')</title>
 
+    @yield('extra-css')
+
 </head>
 <body>
 
@@ -40,8 +42,7 @@
                     </a>
                     <div aria-labelledby="navbarDropdown" class="dropdown-menu ">
                         @foreach($categories as $category)
-                            <a class="dropdown-item" href="{{route('productsPerCategory', $category->id)}}"><img
-                                    height="34" id="dropdownfoto3" src="" width="36"/>{{$category->name}}</a>
+                            <a class="dropdown-item" href="{{route('productsPerCategory', $category->id)}}">{{$category->name}}</a>
                             <div class="dropdown-divider"></div>
                         @endforeach
 
@@ -149,15 +150,9 @@
         </div>
     </div>
 </footer>
-{{--<script src="js/jquery.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="js/bootstrap.min.js">
-</script>--}}
+
 <script src="{{asset('js/front-app.js')}}"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+@yield('scripts')
 </body>
 </html>

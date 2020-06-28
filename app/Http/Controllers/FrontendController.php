@@ -7,12 +7,12 @@ use App\Brand;
 use App\Cart;
 use App\Category;
 use App\Country;
-use App\Currency;
-use App\PaymentPlatform;
+
+use Illuminate\Support\Facades\Session;
+Use Stripe;
 use App\Photo;
 use App\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 class FrontendController extends Controller
 {
@@ -97,20 +97,7 @@ class FrontendController extends Controller
 
     }
 
-    public function checkout()
-    {
-        $brands = Brand::all();
-        $categories = Category::all();
-        $countries = Country::all();
-        if (!Session::has('cart')) {
-            return redirect('/');
-        } else {
-            $currentCart = Session::has('cart') ? Session::get('cart') : null;
-            $cart = new Cart($currentCart);
-            $cart = $cart->products;
-            return view('frontend.checkout', compact('cart', 'brands', 'categories', 'countries'));
-        }
-    }
+
 
     public function detail($id)
     {
@@ -162,18 +149,20 @@ class FrontendController extends Controller
         return redirect('/cart');
     }
 
-    public function PaymentCheckout()
+    public function payment(Request $request)
     {
-        $brands = Brand::all();
-        $categories = Category::all();
-        $products = Product::all();
-        $photos = Photo::all();
-        $blogs = Blog::all();
-        $currencies = Currency::all(); //eur usd gbp
-        $paymentPlatforms = PaymentPlatform::all(); //paypal en stripe
-        return view('payment', compact($brands, $categories,
-            $products,
-            $photos, $blogs))->with(['currencies' => $currencies, 'paymentPlatforms' =>  $paymentPlatforms]);
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe\Charge::create ([
+            "amount" => Session::get('cart')->totalPrice * 100,
+            "currency" => "eur",
+            "source" => $request->stripeToken,
+            "description" => "Order"
+        ]);
+
+        Session::forget('cart');
+
+        return back();
     }
+
 
 }

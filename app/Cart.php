@@ -24,7 +24,7 @@ class Cart extends Model
     public function add($product, $product_id)
     {
         $shopItems = ['quantity' => 0, 'product_id' => 0, 'product_name' => $product->name, 'product_price' =>
-            $product->price, 'product_image' => $product->photo->file, 'product_description' =>
+            $product->price, 'product_image' =>$product->photo , 'product_description' =>
             $product->description, 'product' => $product];
 
         if ($this->products) {

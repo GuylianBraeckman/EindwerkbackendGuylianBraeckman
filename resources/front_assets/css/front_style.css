@@ -46,7 +46,7 @@ section{
 
 .card-img {
     position: relative;
-    overflow: hidden;
+    overflow: hidden;: padding:;
     border-radius: 0;
     z-index: 1;
 }

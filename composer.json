@@ -16,7 +16,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "laravelcollective/html": "^6.1",
-        "nesbot/carbon": "^2.35"
+        "nesbot/carbon": "^2.35",
+        "stripe/stripe-php": "^7.39"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
