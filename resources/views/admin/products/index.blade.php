@@ -37,6 +37,7 @@
                 </thead>
                 <tbody>
                 @if($products)
+
                     @foreach($products as $product)
                         <tr>
                             <td>{{$product->id}}</td>

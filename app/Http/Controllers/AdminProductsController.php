@@ -22,8 +22,9 @@ class AdminProductsController extends Controller
     {
         //
         $brands = Brand::all();
-        $products = Product::withTrashed()->with((['category','brand','photo']));
-        return view('admin.products.index',compact('products','brands'));
+        $categories = Category::all();
+        $products = Product::withTrashed()->with((['category','brand','photo']))->get();
+        return view('admin.products.index',compact('products','brands','categories'));
     }
 
     /**
