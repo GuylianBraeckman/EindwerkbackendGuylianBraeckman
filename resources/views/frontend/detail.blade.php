@@ -53,9 +53,7 @@
                 </div>
                 <div class="col-9 bgproduct">
 
-
-                    <img class="d-flex justify-content-center mx-auto my-3" height="539" src="{{$product->photo ? asset(
-                    $product->photo->file) : 'http://placehold.it/62x62'}}
+                    <img class="d-flex justify-content-center mx-auto my-3" height="539" src="{{$product->photo->file}}"
                          width="465"/><span
                         class="sr-only">Previous</span>
                     </a>

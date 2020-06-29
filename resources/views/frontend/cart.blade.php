@@ -127,7 +127,7 @@
                     <div class="row px-3">
                         <div class="col-lg-10 offset-lg-1">
                             <div class="row">
-                                {{--<div class="col-xl-7">
+                                <div class="col-xl-7">
 
                                         <h3 class="mt-5">contact information</h3>
                                         <div class="form-row ">
@@ -166,7 +166,7 @@
                                             </div>
                                         </div>
 
-                                </div>--}}
+                                </div>
                                 <div class="col-xl-5">
                                     <h3 class="pt-5">CART TOTALS</h3>
                                     <div class="row">
